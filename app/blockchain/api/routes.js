@@ -2,6 +2,8 @@
 const express = require('express');
 const bodyParser = require ('body-parser');
 
+const {get, post } = require('./controller')
+
 //get acces to express
 const app = express();
 
