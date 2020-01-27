@@ -41,7 +41,7 @@ def next_block(last_block):
     this_index = last_block.index + 1
     this_hash = last_block.hash
     this_contributor_id = contributor_id
-    this_data = extract_pdf(pdf_path, this_index)
+    this_data = extract_pdf(pdf_path, last_block.index * 5 + 1)
     this_timestamp = date.datetime.now()
     return Block(this_index, this_hash, this_contributor_id, this_data, this_timestamp)
 
@@ -56,7 +56,7 @@ num_of_blocks_to_add = 5
 
 # Add blocks to the chain
 for i in range(0, num_of_blocks_to_add):
-    sleep(randint(0, 30))
+    #    sleep(randint(0, 30))
     block_to_add = next_block(previous_block)
     blockchain.append(block_to_add)
     previous_block = block_to_add
