@@ -173,16 +173,21 @@ def announce_new_block(block):
 @app.route('/mine', methods=['GET'])
 def mine_unconfirmed_transactions():
     result = blockchain.create_new_block(CONTRIBUTOR_ID)
+    print(result)
     if not result:
         return "No transactions to mine"
     else:
         # Making sure we have the longest chain before announcing to the network
         chain_length = len(blockchain.chain)
         # consensus()
-        if chain_length == len(blockchain.chain):
-            # announce the recently mined block to the network
-            # announce_new_block(blockchain.last_block)
-        return "Block #{} is mined.".format(blockchain.last_block.index)
+        # if chain_length == len(blockchain.chain):
+        # announce the recently mined block to the network
+        # announce_new_block(blockchain.last_block)
+        res = "id:" + str(blockchain.last_block.index) + "\ntimestamp: " + str(blockchain.last_block.timestamp) + "\ndata: " + str(blockchain.last_block.data) + "\ncontributor_id: " + str(blockchain.last_block.contributor_id) + \
+            "\nprevious_hash: " + str(blockchain.last_block.previous_hash) + \
+            "\nnonce: " + str(blockchain.last_block.nonce) + \
+            "\ndifficulty: " + str(blockchain.last_block.difficulty)
+        return res
 
 
 b = Blockchain()
