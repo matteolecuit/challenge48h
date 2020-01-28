@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Blockchain Data</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+    
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../images/chov.png"/>
+
+</head>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+    <a class="navbar-brand" href="#">
+      <img src="../images/chov.png" width="30" height="30" alt="">
+    </a>
+   
+   <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home"> <h3>Home</h3></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/book"> <h3>Books</h3></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/blockchain"> <h3>Blockchain</h3></a>
+      </li>
+      </ul>
+  </div>
+  </nav>
+
+  <!-- Jumbotron -->  
+  
+  <div class="jumbotron">
+    <h1 class="display-4 text-center">All the data of our blockchain</h1>
+    <p class="lead text-center">Here, you can find all the information of our blockchain</p>
+    <hr class="my-4">
+   <p id="blockchainHistory">
+     <!-- Data will be returned in this table -->
+     <table class="table table-borderless table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Index</th>
+          <th scope="col">Timestamp</th>
+          <th scope="col">Data Link</th>
+          <th scope="col">Contributor_id</th>
+          <th scope="col">Previous_hash</th>
+          <th scope="col">Nonce</th>
+          <th scope="col">Difficulty</th>
+          <th scope="col">Hash</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td id="Index">1</td>
+          <td id="Timestamp">"2020-01-28 09:06:43.544337"</td>
+          <td id="DataLink"><a href="#">Page 1</a></td>
+          <td id="Contributor_id">"insert your contributor_id here (40bit)"</td>
+     
+          <td>
+        <div class="previousHash" id="previousHash">     
+            <span class="previousRawHash"></span>
+            </div>
+          
+          </td>
+          <td id="Nonce">14</td>
+          <td id="Difficulty">1</td>
+          <td id="hash"></td>
+        </tr>
+     
+      </tbody>
+    </table>     
+   </p>
+  </div>
+  
+  
+<!-- Footer -->
+<footer>
+  <p class="text-center">©2020 Chôve</p>
+ </footer>
+</body>
+
+<script type="text/javascript" src="blockchain.js"></script>
+</html>
