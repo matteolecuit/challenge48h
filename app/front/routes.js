@@ -14,15 +14,11 @@ app.get('/blockchain', (req, res) => {
 });
 
 app.get('/book', (req, res) => {
-getBlock().then((response) => {
-        console.log(response.name);
-    }).catch((err) => {
-        console.log(err);
-    });
- 
-   res.sendFile(__dirname + '/book.html')
- ;
+    getBlock().then(responseData => {
+        console.log(responseData);
     
+    res.sendFile(__dirname + '/book.html');   
+    }
 });
 
 app.get('/chov', (req, res) => {

@@ -16,25 +16,9 @@ Http.onreadystatechange = (e) => {
 let blockchainHistory = document.getElementById("blockchainHistory")
 
 // here we get data from the api 
-const getdata = () => {
-  return new Promise((resolve, reject) => {
-      request( {
-          url: 'localhost:3000/',
-          json: true
-      }, (error, response, body) => {
-          if(!body) {
-              reject(error);
-          } else {
-              resolve(body); 
-          }
-          
-      }).then((response) => {
-        console.log(response.name);
-    }).catch((err) => {
-        console.log(err);
-    });;
-  });
-};
+function getData () {
+  
+}
 
 
 // here we slice the hashs because they are too long for our tab 
