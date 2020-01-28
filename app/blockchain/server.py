@@ -10,8 +10,8 @@ from blockchain import *
 
 app = Flask(__name__)
 
-# CONTRIBUTOR_ID = b"\x00" + secrets.token_bytes(5) + b"\x00"
-CONTRIBUTOR_ID = 'coucou'
+CONTRIBUTOR_ID = b"\x00" + secrets.token_bytes(5) + b"\x00"
+# CONTRIBUTOR_ID = 'coucou'
 print(CONTRIBUTOR_ID)
 
 # the node's copy of blockchain
