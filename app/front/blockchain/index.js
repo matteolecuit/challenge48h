@@ -1,13 +1,14 @@
-/*const Http = new XMLHttpRequest();
-const url='localhost:3000';
-Http.open("GET", url);
+const Http = new XMLHttpRequest();
+const url='localhost:3000/';
+Http.open("GET", url,true);
+Http.setRequestHeader('Content-Type','application/json');
+
 Http.send();
 
 Http.onreadystatechange = (e) => {
   console.log(Http.responseText)
 }
 
-*/
 
 // here we get all the data of our blockchain 
 let blockchainHistory = document.getElementById("blockchainHistory")
@@ -19,11 +20,11 @@ function Stringslice() {
   var str2 = document.getElementById("hash");
   // str2.substring(8);
 //str2 = str2.toString().slice(0,3);
-str2.value = "test"
+str2.value = "TestOk" // get the value from the api 
 // document.getElementById("hash").innerHTML = str2;
-document.getElementById("previousHash").innerHTML = str2.value;
+document.getElementById("hash").innerHTML = str2.value;
 console.log(str2.value);
 }
 
-window.onLoad = Stringslice();
+window.onLoad = Stringslice(0,3);
 
