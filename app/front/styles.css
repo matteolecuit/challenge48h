@@ -24,6 +24,12 @@ html {
     background: #000000;
     color: #FFFFFF;
 }
+.transition{
+    height: 50px;
+    box-shadow: 0px 10px 17px -15px rgba(0,0,0,0.75);
+    margin-bottom: 20px;
+}
+
 
 @media screen and (max-device-width: 480px){
     .logo{
@@ -31,5 +37,10 @@ display: none;
     }
     .presentation {
         font-size: 15px;
+    }
+}
+@media screen and (max-width: 1000px){
+    .logo{
+display: none;
     }
 }
