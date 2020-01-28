@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require ('body-parser');
 
-const {get, post } = require('./controller')
+const { getById, post, getHistory } = require('./controller')
 
 //get acces to express
 const app = express();
@@ -14,9 +14,16 @@ app.use(bodyParser.json());
 
 // GET ROUTE
 app.get('/', (req,res) =>{
-    get(req,res)
+    getHistory(req,res)
 });
 
+app.get('/block/:id', (req,res) =>{
+    getById(req,res)
+});
+
+app.post('/block', (req,res) =>{
+    post(req,res)
+});
 // POST ROUTE
 app.post('/', (req,res) =>{
     post(req,res)

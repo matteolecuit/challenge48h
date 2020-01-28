@@ -4,5 +4,5 @@ const port = 3000;
 
 // Start app on desired port
 app.listen(port, () => {
-    console.log('Started on port: ' + port )
+    console.log('API was launched on port:' + port )
 });
