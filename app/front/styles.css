@@ -24,3 +24,12 @@ html {
     background: #000000;
     color: #FFFFFF;
 }
+
+@media screen and (max-device-width: 480px){
+    .logo{
+display: none;
+    }
+    .presentation {
+        font-size: 15px;
+    }
+}
