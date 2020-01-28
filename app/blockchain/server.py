@@ -30,12 +30,10 @@ def get_chain():
     chain_data = blockchain._read_chain()
     print(len(blockchain.chain))
     print(chain_data[0].data)
-    for block in blockchain.chain:
-        chain_data.append(block.__dict__)
     print(chain_data[0].data)
     print(len(chain_data))
     return json.dumps({"length": len(chain_data),
-                       "chain": chain_data[0].data,
+                       "chain": [p for p in chain_data],
                        "peers": list(peers)})
 
 
@@ -178,17 +176,12 @@ def mine_unconfirmed_transactions():
     if not result:
         return "No transactions to mine"
     else:
-        print(1)
         # Making sure we have the longest chain before announcing to the network
         chain_length = len(blockchain.chain)
-        print(2)
         # consensus()
-        print(3)
         if chain_length == len(blockchain.chain):
             # announce the recently mined block to the network
-            print(4)
             # announce_new_block(blockchain.last_block)
-            print(5)
         return "Block #{} is mined.".format(blockchain.last_block.index)
 
 
