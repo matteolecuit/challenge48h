@@ -1,14 +1,23 @@
 const http = require('http');
 const { app } = require('./routes')
 const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
+const path = require('path')
+
 
 const Port = 3001;
 
 http.Server(app)
 
+// 
+
+
+
 app.listen(Port, () => {
     console.log('app served on port: ' + Port)
 });
+
+
 
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
