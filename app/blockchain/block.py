@@ -20,8 +20,8 @@ class Block:
             + str(self.data).encode('utf-8')
             + str(self.contributor_id).encode('utf-8')
             + str(self.previous_hash).encode('utf-8')
-            + str(self.difficulty).encode('utf-8')
             + str(self.nonce).encode('utf-8')
+            + str(self.difficulty).encode('utf-8')
         )
         return sha.hexdigest()
 
@@ -30,7 +30,7 @@ class Block:
                 'timestamp': self.timestamp,
                 'data': self.data,
                 'contributor_id': self.contributor_id,
-                'nonce': self.nonce,
                 'previous_hash': self.previous_hash,
+                'nonce': self.nonce,
                 'difficulty': self.difficulty,
                 'hash': self.hash}
