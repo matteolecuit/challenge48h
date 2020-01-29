@@ -1,4 +1,6 @@
 // here we get data from the api 
+const XMLHttpRequest = require("xmlhttprequest")
+
 const sendHttpRequest = (method, url, data) => {
     const promise = new Promise((resolve, reject) => {
     const getRequest = new XMLHttpRequest();
@@ -8,10 +10,10 @@ const sendHttpRequest = (method, url, data) => {
         getRequest.setRequestHeader('Content-Type', 'application/json');
     }
     getRequest.onload = () => {
-        if (xhr.status >= 400) {
-            reject(xhr.response);
+        if (getRequest.status >= 400) {
+            reject(getRequest.response);
         } else {
-            resolve(xhr.response);
+            resolve(getRequest.response);
         }
     };
     getRequest.onerror = () => {
@@ -22,9 +24,9 @@ const sendHttpRequest = (method, url, data) => {
     return promise;
 };
 
-const getBlock = () => {
-    sendHttpRequest('GET', 'http://localhost:3000/').then(responseData => {
-    console.log(responseData);
+const getBlock = (req) => {
+    sendHttpRequest('GET', 'http://localhost:3000/', req).then(responseData => {
+        return responseData;
     });
 };
 

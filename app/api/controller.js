@@ -19,7 +19,7 @@ function getHistory(req, res) {
 
     ]
         
-    res.json(response)
+    res.send(response)
 }
 function getById(req, res) {
     const { id } = req.params;

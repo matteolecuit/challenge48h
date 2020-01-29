@@ -14,21 +14,12 @@ app.get('/blockchain', (req, res) => {
 });
 
 app.get('/book', (req, res) => {
-    getBlock().then(responseData => {
-        console.log(responseData);
-    
-    res.sendFile(__dirname + '/book.html');   
-    }
+    res.sendFile(__dirname + '/book.html')
 });
 
 app.get('/chov', (req, res) => {
     res.sendFile(__dirname + '/images/chov.png')
 });
-
-
-
-//app.use(express.static(__dirname + '/images'));
-//app.use(favicon(path.join(__dirname,'images',"chov.png")));
 
 module.exports = {
     app
