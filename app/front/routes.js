@@ -1,3 +1,5 @@
+const { getBlock } = require('./controller/bookController');
+
 const express = require('express');
 
 const app = express();
@@ -13,6 +15,10 @@ app.get('/blockchain', (req, res) => {
 
 app.get('/book', (req, res) => {
     res.sendFile(__dirname + '/book.html')
+});
+
+app.get('/chov', (req, res) => {
+    res.sendFile(__dirname + '/images/chov.png')
 });
 
 module.exports = {

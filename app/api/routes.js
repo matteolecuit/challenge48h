@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 
 // GET ROUTE
-app.get('/', (req,res) =>{
+app.get('/', (req,res) => {
     getHistory(req,res)
 });
 
